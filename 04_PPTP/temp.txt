@@ -1,0 +1,55 @@
+PS C:\Users\nikla\MEGA\Dokumente\Applied IT-Security Ma\Modul 05 - Netzsicherheit\Exercises\04_PPTP> py .\ppp.py
+md5 hash of password
+with constant NetSec1
+is cc8cc1f0e3c40570f45b3803b300a097
+
+lmh of password
+with constant NetSec1
+is ab242ce05ae67757d746997cec1b6a63
+
+response of password
+with constant NetSec1
+and GoodLuck!
+is 62e967056fc0a0bb901ee3b0a084e92f39c29257d5d6078a358f047049425f9bd51ecc26f8ec992e371437ba4c20befd
+
+
+
+
+
+
+
+ ==== Checking input parameters ====
+ => Challenge:  GoodLuck!
+ => Constant:  NetSec1
+ => Response:  77430cc47afc904c254020cf7d7fbe3432ba1d4938a1550b19ea0bca6f759f23cba562e96465026b0b98bae0417627cc
+ => == PASSED == Length of response is  96
+
+ ===> RES1 = 77430cc47afc904c
+ ===> RES2 = 254020cf7d7fbe34
+ ===> RES3 = 32ba1d4938a1550b
+ ===> RES4 = 19ea0bca6f759f23
+ ===> RES5 = cba562e96465026b
+ ===> RES6 = 0b98bae0417627cc
+
+ ==== Starting cracking RES3 ====
+ => RES3:  32ba1d4938a1550b
+
+ == [RES3] > Found a candidate for RES3
+ == [RES3] > (a40f0000000000) == 32ba1d4938a1550b
+ ==== Starting cracking RES2 ====
+ => RES2:  254020cf7d7fbe34
+ == [LMH] > Testing for candidate (a40f0000000000)
+
+ == [LMH] > Found a candidate for left password halve
+ == [LMH] > (CW00000) == d0bb89854665a40f
+
+ == [RES2] > Testing all possible password candidates
+ == [RES2] > Testing candidate (CW00000) == d0bb89854665a40f
+
+ == [RES2] > Found a candidate for RES2
+ == [RES2] > (CW00000) == 254020cf7d7fbe34
+ ==== Starting cracking RES1 ====
+ => RES1:  77430cc47afc904c
+
+ == [RES1] > Testing all possible password halves
+ == [PASSWORD] > ERROR: Could not find a valid password candidate
