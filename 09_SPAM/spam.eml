@@ -1,0 +1,67 @@
+Delivered-To: lambdafu@gmail.com
+Received: by 2002:a19:8301:0:0:0:0:0 with SMTP id f1csp90330lfd;
+        Wed, 27 Jan 2021 08:57:02 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJyxiBliu1SA+TN5vbiwKiLQFcvKH6hO2h+dpRVTHgBjEFjq4pMd3YQzdTOG5opkL7daVXjJ
+X-Received: by 2002:a1c:6802:: with SMTP id d2mr4904997wmc.32.1611766622504;
+        Wed, 27 Jan 2021 08:57:02 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1611766622; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KiaK46lLKFKFTl2kBb5is9o683m98OoOQcolM0KTujQruQChEnuC9/Koej2lFPCl1f
+         UR8x+TYWtpyZdluXESd5Lcb7fPlXB73Qn7DurBp4i7C5u5cgtDimQsNWJmA/4Nu590yA
+         P9ZnOkupJjvvbZo9EQQYmU/OmV+60dowpZ6ptx+BaiecMOd4KTeIHzjnTNH0eONkQdUU
+         yHP7s3Do3wykYxiJN1sCYqJtaETXYMk6cduxR6vPQvLCmwZwMPHNnRixOLXn2VAKwyDS
+         S0jVfgF8GDrP7VhHfR9ZRcyg6kci4bWS/nc8U1gOtsL0WnRFrhAE5GjseNDVemV5mPB5
+         6ueA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:content-language:mime-version:user-agent
+         :date:message-id:subject:from:cc:to:dkim-signature;
+        bh=Bv8V7GT+OP0kuaSbD8do0UzLRk+o+SrMR1xQp3H4V0A=;
+        b=bZ8VamtKWNmLEelV4GPzVP1++fzRGu09Fx71a+pzTqhOuzOwHak9maMKQOav+mdTS+
+         ix0COSamjJzk/ZzecLf01GVWMALWGP9/ectsFYKlt3HChXF8X/N0+CbO+spkr0xjQPuJ
+         GEKGzvhGOEVOVxiDKE2CpCuF9oo7JjI+SZTqgoZ4uNT7v89SSfBoRkTajbbpIhCd91Su
+         Q92vf9fAM1m+i8gIGgKLMRwGuBTOIiECSuvyiEFNz8QZnv2iZhypqo9wDlpNUpnGn4ld
+         Lsh97ryNl6/VtunrvUBbXAi0vIEv+oNRpkzpkRbeiy0gCmK8ykU60Oyteh3Ale3/Q6CV
+         fPNg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@rub.de header.s=mail-2017 header.b=efaKslYa;
+       spf=pass (google.com: domain of marcus.brinkmann@rub.de designates 134.147.53.149 as permitted sender) smtp.mailfrom=marcus.brinkmann@rub.de;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=rub.de
+Return-Path: <marcus.brinkmann@rub.de>
+Received: from out1.mail.ruhr-uni-bochum.de (out1.mail.ruhr-uni-bochum.de. [134.147.53.149])
+        by mx.google.com with ESMTPS id s3si2616969wrg.488.2021.01.27.08.57.02
+        for <lambdafu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 27 Jan 2021 08:57:02 -0800 (PST)
+Received-SPF: pass (google.com: domain of marcus.brinkmann@rub.de designates 134.147.53.149 as permitted sender) client-ip=134.147.53.149;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@rub.de header.s=mail-2017 header.b=efaKslYa;
+       spf=pass (google.com: domain of marcus.brinkmann@rub.de designates 134.147.53.149 as permitted sender) smtp.mailfrom=marcus.brinkmann@rub.de;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=rub.de
+Received: from mx1.mail.ruhr-uni-bochum.de (localhost [127.0.0.1]) by out1.mail.ruhr-uni-bochum.de (Postfix mo-ext) with ESMTP id 4DQqWy00t7z8SCW for <lambdafu@gmail.com>; Wed, 27 Jan 2021 17:57:02 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rub.de; s=mail-2017; t=1611766622; bh=Bv8V7GT+OP0kuaSbD8do0UzLRk+o+SrMR1xQp3H4V0A=; h=To:Cc:From:Subject:Date:From; b=efaKslYarrtXPmISSPU3w72uTVEq83CsYNnGsl4SnFgNZYsYmdFgNUgmGZA169VxL
+	 Rs/8d6gFS8btBjELOzSafcla8gQhxnAGyhh9w/ZxJBsJaJjEafkt8iToDJGnhgLAUU
+	 sH8zqxmC2f7uPJ0VqeReBkvkhHzrF2i3xfchgUrk=
+Received: from out1.mail.ruhr-uni-bochum.de (localhost [127.0.0.1]) by mx1.mail.ruhr-uni-bochum.de (Postfix idis) with ESMTP id 4DQqWx6Y68z8SBG; Wed, 27 Jan 2021 17:57:01 +0100 (CET)
+X-Envelope-Sender: <marcus.brinkmann@rub.de>
+X-RUB-Notes: Internal origin=134.147.42.236
+Received: from mail2.mail.ruhr-uni-bochum.de (mail2.mail.ruhr-uni-bochum.de [134.147.42.236]) by out1.mail.ruhr-uni-bochum.de (Postfix mi-int) with ESMTP id 4DQqWx5L8Zz8S9w; Wed, 27 Jan 2021 17:57:01 +0100 (CET)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.103.0 at mx1.mail.ruhr-uni-bochum.de
+Received: from [192.168.142.186] (p5b049b74.dip0.t-ipconnect.de [91.4.155.116]) by mail2.mail.ruhr-uni-bochum.de (Postfix) with ESMTPSA id 4DQqWx3bH2zDh1Z; Wed, 27 Jan 2021 17:57:01 +0100 (CET)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.103.0 at mail2.mail.ruhr-uni-bochum.de
+To: 'Marcus Brinkmann' <marcus.brinkmann@ruhr-uni-bochum.de>
+Cc: lambdafu@gmail.com
+From: Marcus Brinkmann <marcus.brinkmann@rub.de>
+Subject: Incredible Offer
+Message-ID: <ed79dfaa-941e-17e4-b820-630b20c02c8c@rub.de>
+Date: Wed, 27 Jan 2021 17:57:01 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Thunderbird/78.6.0
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: 7bit
+
+We have the best conserved ham on the market! Low prices and great
+availability. Buy fast, buy often!
+

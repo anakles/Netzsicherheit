@@ -1,0 +1,7 @@
+[smime]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+subjectAltName = email:copy
+extendedKeyUsage = emailProtection
